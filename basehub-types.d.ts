@@ -46,8 +46,7 @@ export interface Scalars {
   options: string[];
   multiple: boolean
 } | {
-  type: "file";
-  private: boolean
+  type: "file"
 }))[],
     BSHBRichTextContentSchema: RichTextNode[],
     BSHBRichTextTOCSchema: RichTextTocNode[],
@@ -60,7 +59,7 @@ export interface Scalars {
     JSON: any,
     String: string,
     bshb_event_544998816: `bshb_event_544998816:${string}`,
-    schema_bshb_event_544998816: {message?: string;email?: string;screenshot?: string;},
+    schema_bshb_event_544998816: {message?: string;email?: string;screenshot?: File;},
 }
 
 export type AnalyticsKeyScope = 'query' | 'send'
@@ -432,6 +431,7 @@ export interface BaseRichTextJsonGenqlSelection{
     content?: boolean | number
     toc?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BaseRichTextJson"
 }
 
 export interface BlockAudioGenqlSelection{
@@ -443,6 +443,7 @@ export interface BlockAudioGenqlSelection{
     mimeType?: boolean | number
     url?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockAudio"
 }
 
 export interface BlockCodeSnippetGenqlSelection{
@@ -454,6 +455,7 @@ export interface BlockCodeSnippetGenqlSelection{
     theme?: (Scalars['String'] | null)} } | boolean | number
     language?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockCodeSnippet"
 }
 
 export interface BlockColorGenqlSelection{
@@ -464,6 +466,7 @@ export interface BlockColorGenqlSelection{
     r?: boolean | number
     rgb?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockColor"
 }
 
 export interface BlockDocumentGenqlSelection{
@@ -484,6 +487,7 @@ export interface BlockDocumentGenqlSelection{
     on_Home?: HomeGenqlSelection
     on__AgentStart?: _AgentStartGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "BlockDocument"
 }
 
 export interface BlockDocumentSysGenqlSelection{
@@ -497,6 +501,7 @@ export interface BlockDocumentSysGenqlSelection{
     slugPath?: boolean | number
     title?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockDocumentSys"
 }
 
 export interface BlockFileGenqlSelection{
@@ -506,6 +511,7 @@ export interface BlockFileGenqlSelection{
     mimeType?: boolean | number
     url?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockFile"
 }
 
 export interface BlockImageGenqlSelection{
@@ -541,6 +547,7 @@ export interface BlockImageGenqlSelection{
     url?: { __args: {anim?: (Scalars['String'] | null), background?: (Scalars['String'] | null), blur?: (Scalars['Int'] | null), border?: (Scalars['String'] | null), brightness?: (Scalars['Int'] | null), compression?: (Scalars['String'] | null), contrast?: (Scalars['Int'] | null), dpr?: (Scalars['Int'] | null), fit?: (Scalars['String'] | null), format?: (Scalars['String'] | null), gamma?: (Scalars['String'] | null), gravity?: (Scalars['String'] | null), height?: (Scalars['Int'] | null), metadata?: (Scalars['String'] | null), quality?: (Scalars['Int'] | null), rotate?: (Scalars['String'] | null), sharpen?: (Scalars['String'] | null), trim?: (Scalars['String'] | null), width?: (Scalars['Int'] | null)} } | boolean | number
     width?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockImage"
 }
 
 export interface BlockListGenqlSelection{
@@ -562,6 +569,7 @@ export interface BlockListGenqlSelection{
     _sys?: BlockDocumentSysGenqlSelection
     _title?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockList"
 }
 
 export interface BlockOgImageGenqlSelection{
@@ -569,6 +577,7 @@ export interface BlockOgImageGenqlSelection{
     url?: boolean | number
     width?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockOgImage"
 }
 
 
@@ -586,6 +595,7 @@ export interface BlockRichTextGenqlSelection{
     /** Words per minute, defaults to average 183wpm */
     wpm?: (Scalars['Int'] | null)} } | boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockRichText"
 }
 
 export interface BlockVideoGenqlSelection{
@@ -600,6 +610,7 @@ export interface BlockVideoGenqlSelection{
     url?: boolean | number
     width?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "BlockVideo"
 }
 
 export interface DateFilter {eq?: (Scalars['DateTime'] | null),isAfter?: (Scalars['DateTime'] | null),isBefore?: (Scalars['DateTime'] | null),isNull?: (Scalars['Boolean'] | null),neq?: (Scalars['DateTime'] | null),onOrAfter?: (Scalars['DateTime'] | null),onOrBefore?: (Scalars['DateTime'] | null)}
@@ -611,12 +622,14 @@ export interface FeedbackGenqlSelection{
     ingestKey?: boolean | number
     schema?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "Feedback"
 }
 
 export interface GetUploadSignedURLGenqlSelection{
     signedURL?: boolean | number
     uploadURL?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "GetUploadSignedURL"
 }
 
 export interface HomeGenqlSelection{
@@ -637,6 +650,7 @@ export interface HomeGenqlSelection{
     feedback?: FeedbackGenqlSelection
     title?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "Home"
 }
 
 export interface ListFilter {isEmpty?: (Scalars['Boolean'] | null),length?: (Scalars['Int'] | null)}
@@ -647,6 +661,7 @@ export interface ListMetaGenqlSelection{
     /** Total number of items in collection before any filtering/pagination */
     totalCount?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "ListMeta"
 }
 
 export interface MediaBlockGenqlSelection{
@@ -660,6 +675,7 @@ export interface MediaBlockGenqlSelection{
     on_BlockImage?: BlockImageGenqlSelection
     on_BlockVideo?: BlockVideoGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "MediaBlock"
 }
 
 export interface MediaBlockUnionGenqlSelection{
@@ -668,7 +684,8 @@ export interface MediaBlockUnionGenqlSelection{
     on_BlockImage?:BlockImageGenqlSelection,
     on_BlockVideo?:BlockVideoGenqlSelection,
     on_MediaBlock?: MediaBlockGenqlSelection,
-    __typename?: boolean | number
+    __typename?: boolean | number,
+    __fragmentOn?: "MediaBlockUnion"
 }
 
 export interface MutationGenqlSelection{
@@ -726,6 +743,7 @@ export interface MutationGenqlSelection{
     /** Transaction ID */
     id: Scalars['String']} })
     __typename?: boolean | number
+    __fragmentOn?: "Mutation"
 }
 
 export interface NumberFilter {eq?: (Scalars['Float'] | null),gt?: (Scalars['Float'] | null),gte?: (Scalars['Float'] | null),isNull?: (Scalars['Boolean'] | null),lt?: (Scalars['Float'] | null),lte?: (Scalars['Float'] | null),neq?: (Scalars['Float'] | null)}
@@ -757,6 +775,7 @@ export interface QueryGenqlSelection{
     _sys?: RepoSysGenqlSelection
     home?: HomeGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "Query"
 }
 
 export interface RepoSysGenqlSelection{
@@ -767,6 +786,7 @@ export interface RepoSysGenqlSelection{
     slug?: boolean | number
     title?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "RepoSys"
 }
 
 export interface RichTextJsonGenqlSelection{
@@ -774,6 +794,7 @@ export interface RichTextJsonGenqlSelection{
     toc?: boolean | number
     on_BaseRichTextJson?: BaseRichTextJsonGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "RichTextJson"
 }
 
 export interface SelectFilter {excludes?: (Scalars['String'] | null),excludesAll?: (Scalars['String'][] | null),includes?: (Scalars['String'] | null),includesAll?: (Scalars['String'][] | null),includesAny?: (Scalars['String'][] | null),isEmpty?: (Scalars['Boolean'] | null)}
@@ -793,6 +814,7 @@ export interface TransactionStatusGenqlSelection{
     startedAt?: boolean | number
     status?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "TransactionStatus"
 }
 
 export interface VariantGenqlSelection{
@@ -802,6 +824,7 @@ export interface VariantGenqlSelection{
     isDefault?: boolean | number
     label?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "Variant"
 }
 
 export interface _AgentStartGenqlSelection{
@@ -836,6 +859,7 @@ export interface _AgentStartGenqlSelection{
     slackInstallUrl?: boolean | number
     systemPrompt?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "_AgentStart"
 }
 
 export interface _BranchInfoGenqlSelection{
@@ -860,12 +884,14 @@ export interface _BranchInfoGenqlSelection{
     updatedAt?: boolean | number
     workingRootBlockId?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "_BranchInfo"
 }
 
 export interface _BranchesGenqlSelection{
     _meta?: ListMetaGenqlSelection
     items?: _BranchInfoGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "_Branches"
 }
 
 export interface _CommitInfoGenqlSelection{
@@ -883,12 +909,14 @@ export interface _CommitInfoGenqlSelection{
     repoId?: boolean | number
     rootBlockId?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "_CommitInfo"
 }
 
 export interface _GitInfoGenqlSelection{
     branch?: boolean | number
     deploymentUrl?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "_GitInfo"
 }
 
 export interface _PlaygroundInfoGenqlSelection{
@@ -897,11 +925,13 @@ export interface _PlaygroundInfoGenqlSelection{
     expiresAt?: boolean | number
     id?: boolean | number
     __typename?: boolean | number
+    __fragmentOn?: "_PlaygroundInfo"
 }
 
 export interface _agentsGenqlSelection{
     start?: _AgentStartGenqlSelection
     __typename?: boolean | number
+    __fragmentOn?: "_agents"
 }
 
 export interface FragmentsMap {

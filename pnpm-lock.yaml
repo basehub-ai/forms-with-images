@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       basehub:
-        specifier: ^9.2.6
-        version: 9.2.6(@babel/runtime@7.28.3)(@types/react@19.1.10)(react@19.1.0)(typescript@5.9.2)(zod@3.25.76)
+        specifier: 9.2.7
+        version: 9.2.7(@babel/runtime@7.28.3)(@types/react@19.1.10)(react@19.1.0)(typescript@5.9.2)(zod@3.25.76)
       next:
         specifier: 15.4.6
         version: 15.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -949,8 +949,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  basehub@9.2.6:
-    resolution: {integrity: sha512-zNbBSg0Tmud7kbvsORJt0Og/wZ6uIrnBt1vRi7brINOEfj7yvvYvhbBt137LFTm4/L3feRp2USdbMUtAW9hVjg==}
+  basehub@9.2.7:
+    resolution: {integrity: sha512-nsbiN/AZ/wg3n6RKILIeSrvjRoXSGPfUFtr0Yh1yrjKFlywShY3uMVN//JYdPOnLPQ4at0NHQuHP66GsTwmr2A==}
     hasBin: true
 
   brace-expansion@1.1.12:
@@ -3321,7 +3321,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  basehub@9.2.6(@babel/runtime@7.28.3)(@types/react@19.1.10)(react@19.1.0)(typescript@5.9.2)(zod@3.25.76):
+  basehub@9.2.7(@babel/runtime@7.28.3)(@types/react@19.1.10)(react@19.1.0)(typescript@5.9.2)(zod@3.25.76):
     dependencies:
       '@basehub/mutation-api-helpers': 2.1.3(zod@3.25.76)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.10)(react@19.1.0)
@@ -3343,6 +3343,7 @@ snapshots:
       pusher-js: 8.4.0
       rimraf: 6.0.1
       shiki: 1.17.7
+      type-fest: 4.41.0
       typesense: 1.8.2(@babel/runtime@7.28.3)
     transitivePeerDependencies:
       - '@babel/runtime'
